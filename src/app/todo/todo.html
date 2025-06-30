@@ -1,0 +1,17 @@
+<h3>TODO List</h3>
+
+@if (isLoading) {
+  <div class="loader-overlay">
+    <div class="spinner"></div>
+  </div>
+}
+@else {
+    <ul class="todos">
+        @for (item of todoItems(); track item.id) {
+            <li class="todos__item">
+                <input id= "todo-{{item.id}}" type="checkbox" [checked]=item.completed>
+                <label for="todo-{{item.id}}">{{ item.title }} </label>
+            </li>
+        }
+    </ul>
+}
